@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=IntuCoin Wallet
+Comment=IntuCoin wallet
+Exec=intucoin %U
+Terminal=false
+Type=Application
+Icon=intucoin
+MimeType=x-scheme-handler/intucoin;
+Categories=Office;Finance;
