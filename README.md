@@ -96,16 +96,8 @@ linuxdeployqt.AppImage intucoin.desktop -appimage -verbose=2 -always-overwrite -
 windeployqt.exe IntuCoin.exe
 ```
 
-## Community and support
-
-You can find us at:
-
-[Slack](https://join.slack.com/t/hackatoncriptomoneda/shared_invite/enQtMzM3Njc2MzUwNjkwLTY4Yjc1NTg4OTFkM2I5MzhlMGRkMGZlYzIwYTk0OGJmYWQ2MzI2NmE4ZDk5NWEwMDY0NWU1MzY3MGI2NTQ2ZDc)
-
 ## License
-
 intucion-gui is licensed under the GNU Lesser General Public License v3.0
 
 ## Credits
-
-Based on https://github.com/valiant1x/intensecoinwallet/ and https://github.com/cryptonotefoundation/cryptonotewallet
+https://github.com/cryptonotefoundation/cryptonotewallet
