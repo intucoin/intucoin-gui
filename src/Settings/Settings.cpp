@@ -70,7 +70,7 @@ const quint64 DEFAULT_OPTIMIZATION_THRESHOLD = 10000000000000;
 const quint64 DEFAULT_OPTIMIZATION_MIXIN = 6;
 
 const quint64 VERSION_MAJOR = 1;
-const quint64 VERSION_MINOR = 0;
+const quint64 VERSION_MINOR = 1;
 const quint64 VERSION_PATCH = 0;
 
 }
@@ -82,7 +82,7 @@ Settings& Settings::instance() {
 
 
 Settings::Settings() : m_p2pBindPort(0), m_cmdLineParser(nullptr) {
-  m_defaultPoolList << "pool.intucoin.com:3333" << "pool.eu.intucoin.com:3333" << "pool.jp.intucoin.com:3333" << "47.105.48.205:3333";
+  m_defaultPoolList << "pool.us.intucoin.com:3333" << "pool.jp.intucoin.com:3333" ;
 
   Style* lightStyle = new LightStyle();
   Style* darkStyle = new DarkStyle();

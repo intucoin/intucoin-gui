@@ -152,12 +152,12 @@ public:
         m_feeSpin = new QDoubleSpinBox(m_sendFeeFrame);
         m_feeSpin->setObjectName(QStringLiteral("m_feeSpin"));
         m_feeSpin->setButtonSymbols(QAbstractSpinBox::UpDownArrows);
-        m_feeSpin->setSuffix(QStringLiteral("BCN"));
-        m_feeSpin->setDecimals(8);
-        m_feeSpin->setMinimum(0.01);
+        m_feeSpin->setSuffix(QStringLiteral("INTU"));
+        m_feeSpin->setDecimals(2);
+        m_feeSpin->setMinimum(0.10);
         m_feeSpin->setMaximum(1e+09);
-        m_feeSpin->setSingleStep(0.01);
-        m_feeSpin->setValue(0.01);
+        m_feeSpin->setSingleStep(0.05);
+        m_feeSpin->setValue(0.10);
 
         gridLayout_2->addWidget(m_feeSpin, 1, 0, 1, 1);
 

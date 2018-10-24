@@ -3,6 +3,7 @@ include(CryptoNoteWallet.cmake)
 
 project(${CN_PROJECT_NAME})
 
+set(GUI ON)
 execute_process(COMMAND git log -1 --pretty=format:%h
 WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 OUTPUT_VARIABLE GIT_REVISION)
@@ -225,7 +226,12 @@ target_link_libraries(${CRYPTONOTE_LIB} rocksdb ${Boost_LIBRARIES} ${Qt5DBus_LIB
 add_executable(${PROJECT_NAME} ${BUILD_PLATFORM} ${BUILD_RESOURCES} ${SOURCES} ${HEADERS} ${UIS} ${RCC})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_DEFINITIONS _GNU_SOURCE)
-target_link_libraries(${PROJECT_NAME} rocksdb ${Boost_LIBRARIES} ${QTMAIN} ${CRYPTONOTE_LIB} ${Qt5DBus_LIBRARIES})
+
+if(MSVC)
+    target_link_libraries(${PROJECT_NAME} rocksdb ${Boost_LIBRARIES} ${QTMAIN} ${CRYPTONOTE_LIB} ${Qt5DBus_LIBRARIES})
+else()
+    target_link_libraries(${PROJECT_NAME} rocksdblib ${Boost_LIBRARIES} ${QTMAIN} ${CRYPTONOTE_LIB} ${Qt5DBus_LIBRARIES})
+endif()
 
 if (APPLE)
   qt5_use_modules(${PROJECT_NAME} PrintSupport)
@@ -239,3 +245,9 @@ qt5_use_modules(${PROJECT_NAME} Widgets Gui Network)
 
 add_subdirectory(cryptonote/external)
 #add_subdirectory(cryptonote/src)
+if(NOT MSVC)
+  execute_process(
+    COMMAND cmake ${CMAKE_CURRENT_SOURCE_DIR}/cryptonote/external/rocksdb -DWITH_GFLAGS=0 -DCMAKE_BUILD_TYPE=MinSizeRel -DWITH_TESTS=OFF -DWITH_TOOLS=OFF -DPORTABLE=ON -B${PROJECT_BINARY_DIR}/rocksdb
+  )
+  set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES "${PROJECT_BINARY_DIR}/rocksdb/librocksdb.a")
+endif()

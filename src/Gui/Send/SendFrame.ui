@@ -70,7 +70,7 @@
         <x>0</x>
         <y>0</y>
         <width>866</width>
-        <height>69</height>
+        <height>72</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -217,22 +217,22 @@
          <enum>QAbstractSpinBox::UpDownArrows</enum>
         </property>
         <property name="suffix">
-         <string notr="true">INTU</string>
+         <string notr="true"> INTU</string>
         </property>
         <property name="decimals">
          <number>2</number>
         </property>
         <property name="minimum">
-         <double>0.01</double>
+         <double>0.100000000000000</double>
         </property>
         <property name="maximum">
-         <double>999999999.00</double>
+         <double>999999999.000000000000000</double>
         </property>
         <property name="singleStep">
-         <double>0.01</double>
+         <double>0.010000000000000</double>
         </property>
         <property name="value">
-         <double>0.01</double>
+         <double>0.100000000000000</double>
         </property>
        </widget>
       </item>

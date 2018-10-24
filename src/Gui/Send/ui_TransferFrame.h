@@ -146,8 +146,8 @@ public:
 "  border-color: #ef3131;\n"
 "}"));
         m_sendAmountSpin->setButtonSymbols(QAbstractSpinBox::UpDownArrows);
-        m_sendAmountSpin->setSuffix(QStringLiteral("BCN"));
-        m_sendAmountSpin->setDecimals(8);
+        m_sendAmountSpin->setSuffix(QStringLiteral("INTU"));
+        m_sendAmountSpin->setDecimals(2);
         m_sendAmountSpin->setMaximum(1e+12);
 
         gridLayout_2->addWidget(m_sendAmountSpin, 1, 0, 1, 1);
